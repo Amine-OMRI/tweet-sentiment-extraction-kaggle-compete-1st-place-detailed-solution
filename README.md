@@ -19,7 +19,7 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
    - Pour un tweet donné, prédire quel mot ou quelle phrase reflète le mieux le sentiment étiqueté
    ### Data
   ○ Train: 27k tweets</br>
-  ○ Test: 4k / 8k tweets 
+  ○ Public / private test: 4k / 8k tweets 
   | Texte (donné) | Sentiment (donné) | texte_sélectionné (target) |
   | :---: | :---: | :---: |
   | J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime |
@@ -27,7 +27,7 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
   | trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste |
 
    ### Evaluation
-  La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici] (https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
+  La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici] (https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.</br>
   ![alt text](https://neo4j.com/docs/graph-algorithms/current/images/jaccard.png)
 
   Une implémentation Python basée sur les liens ci-dessus:

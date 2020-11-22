@@ -5,7 +5,7 @@ Ce repository contient les solutions détaillées qui ont remporté la première
   ## Présentation de la compétition 
   La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
 
-"Mon chien ridicule est incroyable." [sentiment : positif]</br>
+"My ridiculous dog is amazing." [sentiment: positive]</br>
 Avec tous les tweets qui circulent à chaque seconde, il est difficile de dire si le sentiment derrière un tweet spécifique aura un impact sur la marque d'une entreprise ou d'une personne parce qu'il est viral (positif), ou s'il dévastera les profits parce qu'il a un ton négatif. Il est important de saisir les sentiments dans la langue, à un moment où les décisions et les réactions sont créées et mises à jour en quelques secondes. Mais quels mots conduisent réellement à la description des sentiments ? Dans cette compétition, l'objectif est de choisir la partie du tweet (mot ou phrase) qui reflète le sentiment.
 Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout en utilisant les outils d'apprentissage automatique ?</br>
 Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé "Analyse du sentiment": Emotion in Text".</br>

@@ -47,7 +47,7 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
 
  ## Présentation de la solution 
   Pratiquement toutes les tâches de l'NLP sont maintenant résolues à l'aide des Transformers et Cette solution est aussi basée sur ces derniers.
-  - Les transformateurs tels que BERT, RoBERTa, BART, CamemBERT etc. sont devenus l'état de l'art en PNL- pré-entraînés sur une grande quantité de textes
+  - Les transformateurs (Transformers) tels que BERT, RoBERTa, BART, CamemBERT etc. sont devenus l'état de l'art en NLP- pré-entraînés sur une grande quantité de textes
   - Un peu long à entraîner
   - Peut être utilisé pour ces tâches dans le cadre du NER (Reconnaissance d'entités nommées (Named-entity recognition)) ou de l'QA (Question Answering)
   - la solution basée sur la QA a donné les meilleurs résultats

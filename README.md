@@ -20,12 +20,12 @@ L'objectif de ce concours est de construire un modèle qui peut faire la même c
    ### Data
 ○ Train: 27k tweets</br>
 ○ Test: 4k / 8k tweets 
-Texte (donné) | #Sentiment (donné) | #texte_sélectionné (target)
---- | --- | --- 
+Texte (donné) | Sentiment (donné) | texte_sélectionné (target)
+
 J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime
---- | --- | --- 
+
 je dois récupérer mon ordinateur réparé | neutre | je dois récupérer mon ordinateur réparé
---- | --- | --- 
+
 trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste
 
    ### Evaluation

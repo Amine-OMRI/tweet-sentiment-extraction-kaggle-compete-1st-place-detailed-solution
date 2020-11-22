@@ -1,6 +1,8 @@
 # tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution
 Ce repository contient les solutions détaillées qui ont remporté la première place au concours de kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
 
+Q** Qu'est-ce qu'un tokeniser**
+A tokenizer receives a stream of characters, breaks it up into individual tokens (usually individual words), and outputs a stream of tokens. For instance, a whitespace tokenizer breaks text into tokens whenever it sees any whitespace. It would convert the text "Quick brown fox!" into the terms [Quick, brown, fox!].
 
 
 

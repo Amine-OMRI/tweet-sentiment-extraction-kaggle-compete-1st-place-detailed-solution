@@ -3,9 +3,9 @@
 Ce repository contient les solutions détaillées qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
   ### l'équipe qui a remporté la compétition, composée de:
    [heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
-   [Hikkiiii](https://www.kaggle.com/wochidadonggua): Beijing, Beijing, China</br>
+   [Hikkiiii](https://www.kaggle.com/wochidadonggua): Hikkiiii NLP Data scientist Beijing, Beijing, China</br>
    [heartkilla](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
-   [heartkilla](https://www.kaggle.com/cl2ev1): Cl_ev London, England, United Kingdom</br>
+   [heartkilla](https://www.kaggle.com/cl2ev1): Anton travaille dans l'IT London, England, United Kingdom</br>
 
   ## Présentation de la compétition 
   La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
@@ -15,6 +15,11 @@ Avec tous les tweets qui circulent à chaque seconde, il est difficile de dire s
 Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout en utilisant les outils d'apprentissage automatique ?</br>
 Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé "Analyse du sentiment": Emotion in Text".</br>
 L'objectif de ce concours est de construire un modèle qui peut faire la même chose - examiner le sentiment étiqueté pour un tweet donné et déterminer quel mot ou phrase le soutient le mieux.</br>
+   ### Tâche
+   - Pour un tweet donné, prédire quel mot ou quelle phrase reflète le mieux le sentiment étiqueté
+   ### Data
+○ Train: 27k tweets
+○ Test: 4k / 8k tweets 
    ### Evaluation
 La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
 

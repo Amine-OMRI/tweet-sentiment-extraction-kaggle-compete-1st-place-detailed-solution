@@ -1,6 +1,6 @@
 # [Kaggle Tweet Sentiment Extraction Competition](https://www.kaggle.com/c/tweet-sentiment-extraction/leaderboard): 1st place solution (Dark of the Moon team) 
 
-Ce repository contient les solutions détaillées qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
+Ce repository contient la solution détaillée qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
   ### l'équipe qui a remporté la compétition, composée de:
    [heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
    [Hikkiiii](https://www.kaggle.com/wochidadonggua): Hikkiiii NLP Data scientist Beijing, Beijing, China</br>

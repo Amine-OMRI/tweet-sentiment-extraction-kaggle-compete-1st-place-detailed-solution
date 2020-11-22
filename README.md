@@ -46,7 +46,8 @@ La similarité ou l'intersection Jaccard sur l'union est définie comme la taill
 
 
   ## Présentation de la solution 
-
+   ### Transformers like BERT, RoBERTa, BART ...
+   ### Les modèles utilisés
    ### Tkenisation 
 **Qu'est-ce qu'un tokeniser ?**
 Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

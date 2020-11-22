@@ -2,10 +2,26 @@
 
 Ce repository contient les solutions détaillées qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
 
-  ## Présentation de la compétition ##
-  ## Présentation de la solution ##
+  ## Présentation de la compétition 
+  La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
 
-   ### Tkenisation ###
+"Mon chien ridicule est incroyable." [sentiment : positif]
+
+Avec tous les tweets qui circulent à chaque seconde, il est difficile de dire si le sentiment derrière un tweet spécifique aura un impact sur la marque d'une entreprise ou d'une personne parce qu'il est viral (positif), ou s'il dévastera les profits parce qu'il a un ton négatif. Il est important de saisir les sentiments dans la langue, à un moment où les décisions et les réactions sont créées et mises à jour en quelques secondes. Mais quels mots conduisent réellement à la description des sentiments ? Dans cette compétition, l'objectif est de choisir la partie du tweet (mot ou phrase) qui reflète le sentiment.
+
+  Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout en utilisant les outils d'apprentissage automatique ?
+
+Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé "Analyse du sentiment": Emotion in Text".
+L'objectif de ce concours est de construire un modèle qui peut faire la même chose - examiner le sentiment étiqueté pour un tweet donné et déterminer quel mot ou phrase le soutient le mieux.
+
+
+
+
+
+
+  ## Présentation de la solution 
+
+   ### Tkenisation 
 **Qu'est-ce qu'un tokeniser ?**
 Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].
 

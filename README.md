@@ -1,6 +1,6 @@
 # [Kaggle Tweet Sentiment Extraction Competition](https://www.kaggle.com/c/tweet-sentiment-extraction/leaderboard): 1st place solution (Dark of the Moon team) 
 
-Ce repository contient les solutions détaillées qui ont remporté la première place au concours de kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
+Ce repository contient les solutions détaillées qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
 
   ## Présentation de la compétition ##
   ## Présentation de la solution ##
@@ -22,6 +22,6 @@ Extrêmement rapide (à la fois pour l'entraînement et la tokenisation), grâce
   
   
   
-  ## [Plus de détails]
+  ## Plus de détails
 Ils ont fait un discours sur leur solution lors du meetup ODS Paris: [YouTube link](https://www.youtube.com/watch?v=S7soN-y5WMg)<br />
 La présentation de leur solution : [SlideShare link](https://www.slideshare.net/ArtsemZhyvalkouski/kaggle-tweet-sentiment-extraction-1st-place-solution)

@@ -1,10 +1,8 @@
 # tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution
 Ce repository contient les solutions détaillées qui ont remporté la première place au concours de kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
-
+## Tkenisation ##
 **Qu'est-ce qu'un tokeniser ?**
-A tokenizer receives a stream of characters, breaks it up into individual tokens (usually individual words), and outputs a stream of tokens. For instance, a whitespace tokenizer breaks text into tokens whenever it sees any whitespace. It would convert the text "Quick brown fox!" into the terms [Quick, brown, fox!].
-
-
+Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].
 
 ![alt text](https://camo.githubusercontent.com/541a5e3521cf5b4c84c7ced36628841d8e66d58b7f2e51cded099a18c006d4e9/68747470733a2f2f68756767696e67666163652e636f2f6c616e64696e672f6173736574732f746f6b656e697a6572732f746f6b656e697a6572732d6c6f676f2e706e67)
 Développé par huggingdace, propose une implémentation des tokenizers les plus utilisés aujourd'hui, en mettant l'accent sur les performances et la polyvalence

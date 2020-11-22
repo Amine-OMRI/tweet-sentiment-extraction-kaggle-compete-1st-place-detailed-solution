@@ -54,12 +54,13 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
   - la solution basée sur la QA a donné les meilleurs résultats
    ### Transformers 
    <p align="center">
-    <br>
-    <img src="https://raw.githubusercontent.com/huggingface/transformers/master/docs/source/imgs/transformers_logo_name.png" width="400"/>
-    <br>
-    <a href="https://circleci.com/gh/huggingface/transformers">
-        <img alt="Build" src="https://img.shields.io/circleci/build/github/huggingface/transformers/master">
-    </a></p>
+   <br>
+   <img src="https://raw.githubusercontent.com/huggingface/transformers/master/docs/source/imgs/transformers_logo_name.png" width="400"/>
+   <br>
+   <a href="https://circleci.com/gh/huggingface/transformers">
+     <img alt="Build" src="https://img.shields.io/circleci/build/github/huggingface/transformers/master">
+   </a>
+   </p>
    l'etat de l'art pour le traitement de langage naturel de pour Pytorch et TensorFlow 2.0 </br>
    🤗 Transformers (anciennement connu sous le nom de pytorch-transformers et pytorch-pretrained-bert) fournit des architectures à usage général (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet...) pour la compréhension du langage naturel (TALN / NLP) et la génération du langage naturel (NLG) avec plus de 32 modèles pré-entraînés dans plus de 100 langues et une interopérabilité profonde entre TensorFlow 2.0 et PyTorch.</br>
    🤗 Transformers fournit des milliers de modèles pré-entrainés pour effectuer des tâches sur des textes telles que la classification, l'extraction d'informations, la réponse à des questions (QA), le résumé, la traduction, la génération de texte, etc. dans plus de 100 langues. </br>

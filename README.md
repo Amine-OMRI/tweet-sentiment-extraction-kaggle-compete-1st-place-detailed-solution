@@ -2,10 +2,10 @@
 
 Ce repository contient la solution détaillée qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
   ### l'équipe qui a remporté la compétition, composée de:
-   [heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
+   [Heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
    [Hikkiiii](https://www.kaggle.com/wochidadonggua): Hikkiiii NLP Data scientist Beijing, Beijing, China</br>
-   [heartkilla](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
-   [heartkilla](https://www.kaggle.com/cl2ev1): Anton travaille dans l'IT London, England, United Kingdom</br>
+   [Theo](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
+   [Cl_ev](https://www.kaggle.com/cl2ev1): Anton travaille dans l'IT London, England, United Kingdom</br>
 
   ## Présentation de la compétition 
   La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
@@ -20,6 +20,10 @@ L'objectif de ce concours est de construire un modèle qui peut faire la même c
    ### Data
 ○ Train: 27k tweets</br>
 ○ Test: 4k / 8k tweets 
+Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+
    ### Evaluation
 La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
 

@@ -7,46 +7,46 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
    [Theo](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
    [Cl_ev](https://www.kaggle.com/cl2ev1): Anton travaille dans l'IT London, England, United Kingdom</br>
 
-  ## Présentation de la compétition 
-  La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
+ ## Présentation de la compétition 
+   La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :
 
-"My ridiculous dog is amazing." [sentiment: positive]</br>
-Avec tous les tweets qui circulent à chaque seconde, il est difficile de dire si le sentiment derrière un tweet spécifique aura un impact sur la marque d'une entreprise ou d'une personne parce qu'il est viral (positif), ou s'il dévastera les profits parce qu'il a un ton négatif. Il est important de saisir les sentiments dans la langue, à un moment où les décisions et les réactions sont créées et mises à jour en quelques secondes. Mais quels mots conduisent réellement à la description des sentiments ? Dans cette compétition, l'objectif est de choisir la partie du tweet (mot ou phrase) qui reflète le sentiment.
-Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout en utilisant les outils d'apprentissage automatique ?</br>
-Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé "Analyse du sentiment": Emotion in Text".</br>
-L'objectif de ce concours est de construire un modèle qui peut faire la même chose - examiner le sentiment étiqueté pour un tweet donné et déterminer quel mot ou phrase le soutient le mieux.</br>
+  "My ridiculous dog is amazing." [sentiment: positive]</br>
+  Avec tous les tweets qui circulent à chaque seconde, il est difficile de dire si le sentiment derrière un tweet spécifique aura un impact sur la marque d'une     entreprise ou d'une personne parce qu'il est viral (positif), ou s'il dévastera les profits parce qu'il a un ton négatif. Il est important de saisir les           sentiments dans la langue, à un moment où les décisions et les réactions sont créées et mises à jour en quelques secondes. Mais quels mots conduisent réellement   à la description des sentiments ? Dans cette compétition, l'objectif est de choisir la partie du tweet (mot ou phrase) qui reflète le sentiment.
+  Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout en utilisant les outils d'apprentissage automatique ?</br>
+  Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé   "Analyse du sentiment": Emotion in Text".</br>
+  L'objectif de ce concours est de construire un modèle qui peut faire la même chose - examiner le sentiment étiqueté pour un tweet donné et déterminer quel mot     ou phrase le soutient le mieux.</br>
    ### Tâche
    - Pour un tweet donné, prédire quel mot ou quelle phrase reflète le mieux le sentiment étiqueté
    ### Data
-○ Train: 27k tweets</br>
-○ Test: 4k / 8k tweets 
-| Texte (donné) | Sentiment (donné) | texte_sélectionné (target) |
-| :---: | :---: | :---: |
-| J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime |
-| je dois récupérer mon ordinateur réparé | neutre | je dois récupérer mon ordinateur réparé |
-| trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste |
+  ○ Train: 27k tweets</br>
+  ○ Test: 4k / 8k tweets 
+  | Texte (donné) | Sentiment (donné) | texte_sélectionné (target) |
+  | :---: | :---: | :---: |
+  | J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime |
+  | je dois récupérer mon ordinateur réparé | neutre | je dois récupérer mon ordinateur réparé |
+  | trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste |
 
    ### Evaluation
-La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
-![alt text](https://neo4j.com/docs/graph-algorithms/current/images/jaccard.png)
+  La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici] (https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
+  ![alt text](https://neo4j.com/docs/graph-algorithms/current/images/jaccard.png)
 
-Une implémentation Python basée sur les liens ci-dessus:
-```ruby
-def jaccard(str1, str2): 
-    a = set(str1.lower().split()) 
-    b = set(str2.lower().split())
-    c = a.intersection(b)
-    return float(len(c)) / (len(a) + len(b) - len(c))
-```
-La similarité ou l'intersection Jaccard sur l'union est définie comme la taille de l'intersection divisée par la taille de l'union de deux ensembles. Prenons l'exemple de deux phrases :</br>
-- Phrase 1 : AI is our friend and it has been friendly</br>
-- Phrase 2 : AI and humans have always been friendly</br>
-![alt text](https://miro.medium.com/max/463/1*u2ZZPh5er5YbmOg7k-s0-A.png)</br>
-==> Pour les deux phrases ci-dessus, nous obtenons une similarité Jaccard de 5/(5+3+2) = 0,5 qui est la taille de l'intersection de l'ensemble divisée par la taille totale de l'ensemble.
+  Une implémentation Python basée sur les liens ci-dessus:
+  ```ruby
+  def jaccard(str1, str2): 
+      a = set(str1.lower().split()) 
+      b = set(str2.lower().split())
+      c = a.intersection(b)
+      return float(len(c)) / (len(a) + len(b) - len(c))
+  ```
+  La similarité ou l'intersection Jaccard sur l'union est définie comme la taille de l'intersection divisée par la taille de l'union de deux ensembles. Prenons     l'exemple de deux phrases :</br>
+  - Phrase 1 : AI is our friend and it has been friendly</br>
+  - Phrase 2 : AI and humans have always been friendly</br>
+  ![alt text](https://miro.medium.com/max/463/1*u2ZZPh5er5YbmOg7k-s0-A.png)</br>
+  ==> Pour les deux phrases ci-dessus, nous obtenons une similarité Jaccard de 5/(5+3+2) = 0,5 qui est la taille de l'intersection de l'ensemble divisée par la   taille totale de l'ensemble.
 
 
-  ## Présentation de la solution 
-Pratiquement toutes les tâches de l'NLP sont maintenant résolues à l'aide des Transformers et Cette solution est aussi basée sur ces derniers.
+ ## Présentation de la solution 
+  Pratiquement toutes les tâches de l'NLP sont maintenant résolues à l'aide des Transformers et Cette solution est aussi basée sur ces derniers.
   - Les transformateurs tels que BERT, RoBERTa, BART, CamemBERT etc. sont devenus l'état de l'art en PNL- pré-entraînés sur une grande quantité de textes
   - Un peu long à entraîner
   - Peut être utilisé pour ces tâches dans le cadre du NER (Reconnaissance d'entités nommées (Named-entity recognition)) ou de l'QA (Question Answering)
@@ -55,17 +55,17 @@ Pratiquement toutes les tâches de l'NLP sont maintenant résolues à l'aide des
    ### Transformers like BERT, RoBERTa, BART ...
    ### Les modèles utilisés
    ### Tkenisation 
-**Qu'est-ce qu'un tokeniser ?**
-Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].
+  **Qu'est-ce qu'un tokeniser ?**
+  Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].
 
-![alt text](https://camo.githubusercontent.com/541a5e3521cf5b4c84c7ced36628841d8e66d58b7f2e51cded099a18c006d4e9/68747470733a2f2f68756767696e67666163652e636f2f6c616e64696e672f6173736574732f746f6b656e697a6572732f746f6b656e697a6572732d6c6f676f2e706e67)
-Développé par huggingdace, propose une implémentation des tokenizers les plus utilisés aujourd'hui, en mettant l'accent sur les performances et la polyvalence
+  ![alt text](https://camo.githubusercontent.com/541a5e3521cf5b4c84c7ced36628841d8e66d58b7f2e51cded099a18c006d4e9/68747470733a2f2f68756767696e67666163652e636f2f6c616e64696e672f6173736574732f746f6b656e697a6572732f746f6b656e697a6572732d6c6f676f2e706e67)
+  Développé par huggingdace, propose une implémentation des tokenizers les plus utilisés aujourd'hui, en mettant l'accent sur les performances et la polyvalence
 
-Extrêmement rapide (à la fois pour l'entraînement et la tokenisation), grâce à l'implémentation de Rust. Il faut moins de 20 secondes pour tokeniser un Go de texte sur l'unité centrale d'un serveur.
-  - Facile à utiliser, mais aussi extrêmement polyvalent.
-  - Conçu pour la recherche et la production.
-  - La normalisation s'accompagne d'un suivi des alignements. Il est toujours possible d'obtenir la partie de la phrase originale qui correspond à un jeton donné.
-  - Effectue tout le prétraitement : Tronquer, Tamponner, ajouter les tokens spéciaux dont votre modèle a besoin.
+  Extrêmement rapide (à la fois pour l'entraînement et la tokenisation), grâce à l'implémentation de Rust. Il faut moins de 20 secondes pour tokeniser un Go de     texte sur l'unité centrale d'un serveur.
+    - Facile à utiliser, mais aussi extrêmement polyvalent.
+    - Conçu pour la recherche et la production.
+    - La normalisation s'accompagne d'un suivi des alignements. Il est toujours possible d'obtenir la partie de la phrase originale qui correspond à un jeton donné.
+    - Effectue tout le prétraitement : Tronquer, Tamponner, ajouter les tokens spéciaux dont votre modèle a besoin.
   
   
   

@@ -21,11 +21,11 @@ def jaccard(str1, str2):
     c = a.intersection(b)
     return float(len(c)) / (len(a) + len(b) - len(c))
 ```
-La similarité ou l'intersection Jaccard sur l'union est définie comme la taille de l'intersection divisée par la taille de l'union de deux ensembles. Prenons l'exemple de deux phrases :
--Phrase 1 : AI is our friend and it has been friendly
--Phrase 2 : AI and humans have always been friendly
+La similarité ou l'intersection Jaccard sur l'union est définie comme la taille de l'intersection divisée par la taille de l'union de deux ensembles. Prenons l'exemple de deux phrases :</br>
+- Phrase 1 : AI is our friend and it has been friendly</br>
+- Phrase 2 : AI and humans have always been friendly
 ![alt text](https://miro.medium.com/max/463/1*u2ZZPh5er5YbmOg7k-s0-A.png)
-
+Pour les deux phrases ci-dessus, nous obtenons une similarité Jaccard de 5/(5+3+2) = 0,5 qui est la taille de l'intersection de l'ensemble divisée par la taille totale de l'ensemble.
 
 
   ## Présentation de la solution 

@@ -47,12 +47,15 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
 
  ## Présentation de la solution 
   Pratiquement toutes les tâches de l'NLP sont maintenant résolues à l'aide des Transformers et Cette solution est aussi basée sur ces derniers.
-  - Les transformateurs (Transformers) tels que BERT, RoBERTa, BART, CamemBERT etc. sont devenus l'état de l'art en NLP- pré-entraînés sur une grande quantité de textes
+  - Les transformateurs (Transformers) tels que BERT, RoBERTa, BART, CamemBERT etc. sont devenus l'état de l'art en NLP
+  - pré-entraînés sur une grande quantité de textes
   - Un peu long à entraîner
   - Peut être utilisé pour ces tâches dans le cadre du NER (Reconnaissance d'entités nommées (Named-entity recognition)) ou de l'QA (Question Answering)
   - la solution basée sur la QA a donné les meilleurs résultats
-
-   ### Transformers like BERT, RoBERTa, BART ...
+   ### Transformers 
+   l'etat de l'art pour le traitement de langage naturel de pour Pytorch et TensorFlow 2.0 </br>
+   🤗 Transformers (anciennement connu sous le nom de pytorch-transformers et pytorch-pretrained-bert) fournit des architectures à usage général (BERT, GPT-2, RoBERTa, XLM, DistilBert, XLNet...) pour la compréhension du langage naturel (NLU / NLP) et la génération du langage naturel (NLG) avec plus de 32 modèles pré-entraînés dans plus de 100 langues et une interopérabilité profonde entre TensorFlow 2.0 et PyTorch.</br>
+   voici la [documentation](https://github.com/huggingface/transformers) des transformers sur leur repo github.</br>
    ### Les modèles utilisés
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**

@@ -11,7 +11,7 @@ Quels mots des tweets reflètent un sentiment positif, négatif ou neutre ? tout
 Dans ce concours, ils ont extrait les phrases de la plateforme ["Data for Everyone"](https://appen.com/resources/datasets/). L'ensemble de données est intitulé "Analyse du sentiment": Emotion in Text".</br>
 L'objectif de ce concours est de construire un modèle qui peut faire la même chose - examiner le sentiment étiqueté pour un tweet donné et déterminer quel mot ou phrase le soutient le mieux.</br>
    ### Evaluation
-La métrique utilisée dans cette compétition est le score Jaccard au niveau des mots. Vous trouverez ici une bonne description de la similarité de Jaccard pour les chaînes de caractères.
+La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
 
 Une implémentation Python basée sur les liens ci-dessus:
 ```ruby

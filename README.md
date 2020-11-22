@@ -20,9 +20,13 @@ L'objectif de ce concours est de construire un modèle qui peut faire la même c
    ### Data
 ○ Train: 27k tweets</br>
 ○ Test: 4k / 8k tweets 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+Texte (donné) | #Sentiment (donné) | #texte_sélectionné (target)
+--- | --- | --- 
+J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime
+--- | --- | --- 
+je dois récupérer mon ordinateur réparé | neutre | je dois récupérer mon ordinateur réparé
+--- | --- | --- 
+trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste
 
    ### Evaluation
 La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.

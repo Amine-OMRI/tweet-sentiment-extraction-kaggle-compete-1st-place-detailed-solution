@@ -18,7 +18,7 @@ L'objectif de ce concours est de construire un modèle qui peut faire la même c
    ### Tâche
    - Pour un tweet donné, prédire quel mot ou quelle phrase reflète le mieux le sentiment étiqueté
    ### Data
-○ Train: 27k tweets
+○ Train: 27k tweets</br>
 ○ Test: 4k / 8k tweets 
    ### Evaluation
 La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.

@@ -2,10 +2,10 @@
 
 Ce repository contient les solutions détaillées qui ont remporté la première place de la compétition kaggle appelé "Tweet Sentiment Extraction" il y a 5 mois.
   ### l'équipe qui a remporté la compétition, composée de:
-    [heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
-    [Hikkiiii](https://www.kaggle.com/wochidadonggua): Beijing, Beijing, China</br>
-    [heartkilla](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
-    [heartkilla](https://www.kaggle.com/cl2ev1): Cl_ev London, England, United Kingdom</br>
+   **[heartkilla](https://www.kaggle.com/aruchomu): Artsem Zhyvalkouski Data Scientist</br>
+   **[Hikkiiii](https://www.kaggle.com/wochidadonggua): Beijing, Beijing, China</br>
+   **[heartkilla](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
+   **[heartkilla](https://www.kaggle.com/cl2ev1): Cl_ev London, England, United Kingdom</br>
 
   ## Présentation de la compétition 
   La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :

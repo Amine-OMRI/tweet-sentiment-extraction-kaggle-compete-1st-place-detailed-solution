@@ -28,6 +28,7 @@ L'objectif de ce concours est de construire un modèle qui peut faire la même c
 
    ### Evaluation
 La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.
+![alt text](https://neo4j.com/docs/graph-algorithms/current/images/jaccard.png)
 
 Une implémentation Python basée sur les liens ci-dessus:
 ```ruby

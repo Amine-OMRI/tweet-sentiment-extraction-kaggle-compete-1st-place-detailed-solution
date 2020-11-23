@@ -74,8 +74,18 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Question: sentiment
    - Answer: texte sélectionné
    <div style="text-align:center"><img src="https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Question%20answering%20setup.png?raw=true" /></div>
-   
-   ### Les modèles utilisés
+   ### Les modèles utilisés 
+   #### Les modèles de [Heartkilla](https://www.kaggle.com/aruchomu):
+   RoBERTa-base-squad2, RoBERTa-large-squad2,
+DistilRoBERTa-base, base XLNet
+  - Il a fait une pré-entrainement sur SQuAD 2.0
+  - Certains d'entre eux sont déjà pré-entrainés sur SQuAD 2.0, ce qui fait que non seulement le pré-entrainement initial fonctionne, mais aussi la tâche de pré-entrainement fonctionnais bien.
+  - Il a modifié l'architecture (Fine tuning) en effectuant une moyenne et un maxpooling (Avg / Max ) des quatre dernières couches sans embeddings.
+  - Il a également effectué un Multi Sample Dropout,
+      AdamW avec plan de démarrage linéaire
+  - Une loss personnalisée : Jaccard-based Soft Labels
+  - Le meilleur modèle unique : RoBERTa-base-squad2, 5 fold CV stratified : 0,715
+  
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**
   Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

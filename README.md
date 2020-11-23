@@ -102,7 +102,7 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Le meilleur modèle unique : RoBERTa-base-squad2, 5 fold CV stratified : 0,715</br>   
    **Multi Sample Dropout (MSD):** C'est l'une des techniques qu'ils ont utilisées et que je trouve si intéressante. En fait, il applique un dropout plusieurs fois avec différents masques et ensuite il calcule la moyenne des résultats</br>
   Le dropout initial crée un sous-ensemble choisi au hasard (appelé dropout sample) à partir des données d'entrée de chaque itération d'entrainement, tandis que le MSD crée plusieurs échantillon de dropout. La loss est calculée pour chaque échantillon, puis la moyenne des losses des échantillons est calculée pour obtenir la Loss finale.</br>
-  [alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Multi-Sample-Dropout.png?raw=true)
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Multi-Sample-Dropout.png?raw=true)
 
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**

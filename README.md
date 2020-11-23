@@ -68,23 +68,20 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
   - [Question answering with DistilBERT](https://huggingface.co/distilbert-base-uncased-distilled-squad?text=Which+name+is+also+used+to+describe+the+Amazon+rainforest+in+English%3F&context=The+Amazon+rainforest+%28Portuguese%3A+Floresta+Amaz%C3%B4nica+or+Amaz%C3%B4nia%3B+Spanish%3A+Selva+Amaz%C3%B3nica%2C+Amazon%C3%ADa+or+usually+Amazonia%3B+French%3A+For%C3%AAt+amazonienne%3B+Dutch%3A+Amazoneregenwoud%29%2C+also+known+in+English+as+Amazonia+or+the+Amazon+Jungle%2C+is+a+moist+broadleaf+forest+that+covers+most+of+the+Amazon+basin+of+South+America.+This+basin+encompasses+7%2C000%2C000+square+kilometres+%282%2C700%2C000+sq+mi%29%2C+of+which+5%2C500%2C000+square+kilometres+%282%2C100%2C000+sq+mi%29+are+covered+by+the+rainforest.+This+region+includes+territory+belonging+to+nine+nations.+The+majority+of+the+forest+is+contained+within+Brazil%2C+with+60%25+of+the+rainforest%2C+followed+by+Peru+with+13%25%2C+Colombia+with+10%25%2C+and+with+minor+amounts+in+Venezuela%2C+Ecuador%2C+Bolivia%2C+Guyana%2C+Suriname+and+French+Guiana.+States+or+departments+in+four+nations+contain+%22Amazonas%22+in+their+names.+The+Amazon+represents+over+half+of+the+planet%27s+remaining+rainforests%2C+and+comprises+the+largest+and+most+biodiverse+tract+of+tropical+rainforest+in+the+world%2C+with+an+estimated+390+billion+individual+trees+divided+into+16%2C000+species)
   - [Translation with T5](https://huggingface.co/t5-base?text=My+name+is+Wolfgang+and+I+live+in+Berlin)</br>
   
-  [Alt text](https://lesdieuxducode.com/images/blog/pauldenoyes@expaceocom/BERT-Transformer-Architecture-Globale.png)
-   [Alt text](https://lesdieuxducode.com/images/blog/pauldenoyes@expaceocom/BERT-Transformer-Architecture-Globale.png)
    **Comment BERT apprend**
    BERT apprend de façon non supervisée, l'entrée se suffit à elle même, pas besoin de labelliser, qualifier quoi que ce soit, on se servira uniquement de l'entrée, et de plusieurs manières. Nous appellerons ça le MLM pour "Masked language model". Nous allons décortiquer ce que le modèle tente d'apprendre.</br>
-Notations : [CLS] indique un début de séquence, [SEP] une séparation, en général entre deux phrases dans notre cas, [MASK] un mot masqué</br>
-  **Les mots "masqués" MLM**
-Ici la séquence d'entrée a été volontairement oblitérée d'un mot, le mot masqué, et le modèle va apprendre à prédire ce mot masqué.</br>
-Entrée = [CLS] the man went to [MASK] store [SEP] </br>
-Entrée = [CLS] the man [MASK] to the store [SEP]</br>
-  **La phrase suivante NSP**
-Ici le modèle doit déterminer si la séquence suivante (suivant la séparation[SEP]) est bien la séquence suivante. Si oui, IsNext sera vrai, le label sera IsNext, si non, le label sera NotNext.</br>
-Entrée = [CLS] the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]</br>
-Label = IsNext</br>
-Entrée = [CLS] the man [MASK] to the store [SEP]</br>
-penguin [MASK] are flight ##less birds [SEP]</br>
-Label = NotNext</br>
-
+Notations : **[CLS]** indique un début de séquence, **[SEP]** une séparation, en général entre deux phrases, **[MASK]** un mot masqué</br>
+  **Les mots masqués (MLM):**
+  Ici la séquence d'entrée a été volontairement oblitérée d'un mot, le mot masqué, et le modèle va apprendre à prédire ce mot masqué.</br>
+  Entrée = [CLS] the man went to [MASK] store [SEP] </br>
+  Entrée = [CLS] the man [MASK] to the store [SEP]</br>
+  **La phrase suivante (NSP):**
+  Ici le modèle doit déterminer si la séquence suivante (suivant la séparation[SEP]) est bien la séquence suivante. Si oui, IsNext sera vrai, le label sera IsNext, si non, le label sera NotNext.</br>
+  Entrée = [CLS] the man went to [MASK] store [SEP] he bought a gallon [MASK] milk [SEP]</br>
+  Label = IsNext</br>
+  Entrée = [CLS] the man [MASK] to the store [SEP] penguin [MASK] are flight ##less birds [SEP]</br>
+  Label = NotNext</br>
+  [Source ici. Architecture globale de "The Transformer"](https://lesdieuxducode.com/images/blog/pauldenoyes@expaceocom/BERT-Transformer-Architecture-Globale.png)
 
   ### Question answering solution (QA)
    Dans leur solution, ils ont mis en place différents mécanismes, tels que la reconnaissance des entités nommées NER et le Question answering, pour répondre aux questions qui ont le mieux fonctionné, ils ont considéré le sentiment comme la question et la sous-phrase ou le mot comme la réponse, et ils l'envoient au transformateur suivi d'une couche dense / fully connected et une Softmax pour prédire deux ensembles de prababilités.</br>

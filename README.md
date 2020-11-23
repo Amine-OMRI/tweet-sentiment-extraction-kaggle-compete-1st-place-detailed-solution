@@ -84,8 +84,51 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Certains d'entre eux sont déjà pré-entrainés sur SQuAD 2.0, ce qui fait que non seulement le pré-entrainement initial fonctionne, mais aussi la tâche de pré-      entrainement fonctionnais bien.</br>
    - Il a modifié l'architecture (Fine tuning) en effectuant une moyenne et un maxpooling (Avg / Max ) de toutes les couches sans embeddings.</br>
    - Il a également effectué un Multi Sample Dropout : cette technique accélère l'entrainement et permet une meilleure généralisation pour les réseaux de neurones.
-   [Alt text]()
-   
+   [Alt text](https://lesdieuxducode.com/images/blog/pauldenoyes@expaceocom/BERT-Transformer-Architecture-Globale.png)
+   **Comment BERT apprend**
+  BERT apprend de façon non supervisée, l'entrée se suffit à elle même, pas besoin de labelliser, qualifier quoi que ce soit, on se servira uniquement de l'entrée, et de plusieurs manières. Nous appellerons ça le MLM pour "Masked language model". Nous allons décortiquer ce que le modèle tente d'apprendre.
+
+Notations :
+
+[CLS] indique un début de séquence
+
+[SEP] une séparation, en général entre deux phrases dans notre cas.
+
+[MASK] un mot masqué
+
+
+
+**Les mots "masqués" MLM**
+
+Ici la séquence d'entrée a été volontairement oblitérée d'un mot, le mot masqué, et le modèle va apprendre à prédire ce mot masqué.
+
+
+Entrée = [CLS] the man went to [MASK] store [SEP]
+
+Entrée = [CLS] the man [MASK] to the store [SEP]
+
+
+
+**La phrase suivante NSP**
+
+
+Ici le modèle doit déterminer si la séquence suivante (suivant la séparation[SEP]) est bien la séquence suivante. Si oui, IsNext sera vrai, le label sera IsNext, si non, le label sera NotNext.
+
+
+
+Entrée = [CLS] the man went to [MASK] store [SEP]
+
+he bought a gallon [MASK] milk [SEP]
+
+Label = IsNext
+
+Entrée = [CLS] the man [MASK] to the store [SEP]
+
+penguin [MASK] are flight ##less birds [SEP]
+
+Label = NotNext
+
+
    - , AdamW avec plan de démarrage linéaire.</br>
    - Une loss personnalisée : Jaccard-based Soft Labels.</br>
    - Le meilleur modèle unique : RoBERTa-base-squad2, 5 fold CV stratified : 0,715</br>   

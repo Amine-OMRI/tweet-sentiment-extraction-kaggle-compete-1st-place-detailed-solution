@@ -108,8 +108,25 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
   Il a également remarqué que les probabilités dans ce cas changent assez rapidement, alors il décidé de corriger un peu le résultat en ajoutant un carré.
   ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2F4d1975e293c33c077fd45e6b81d1aa63%2FScreen%20Shot%202020-05-30%20at%2017.29.17.png?generation=1592405079812280&alt=media)</br>
   Cela a parfaitement fonctionné pour trois de ses modèles, à l'exception du DistilRoBERTa qui utilisait la précédente version sans le carré. Finalement, cette Loss a augmenté tous les modèles d'environ 0,003.
-  Voici un graphique des probabilités target pour une phrase de 30 tokens avec start_idx=5 et end_idx=25, alpha=0,3.
+  Voici un graphique des probabilités target pour une phrase de 30 tokens avec start_idx=5 et end_idx=25, alpha=0,3.</br>
    ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2Fd746070e62bc05d74f7543785da6df70%2Fplot.jpg?generation=1592405194100691&alt=media)</br>
+   
+   **Les modèles de [Theo](https://www.kaggle.com/theoviel):**</br>
+   ● Transformateurs
+      ○ BERT-base-uncased (CV 0.710)
+      ○ BERT-large-uncased-wwm (CV 0.710)
+      ○ DistilBERT (CV 0.705)
+      ○ ALBERT-large-v2 (CV 0.711)
+   ● Architecture
+      ○ MSD sur la concaténation des 8 derniers états cachés
+   ● Entrainement
+      ○ Adoucir la cross-entropy catégorielle
+      ○ [Taux d'apprentissage discriminatoire](https://arxiv.org/pdf/1801.06146.pdf)
+      ○ **Sequence bucketing** pour accélérer l'entrainement : L'idée est d'effectuer une mise en bucket (bucketing) du corpus d'entraînement, où chaque bucket représente une plage de longueurs d'énonciation et chaque échantillon d'entraînement est attribué au bucket qui correspond à sa longueur.Ensuite, un batch est construit en tirant des séquences à partir d'un bucket choisi au hasard. Le concept de bucketing atténue d'une certaine manière le problème des zero-padding si des plages de longueur appropriées peuvent être définies, tout en permettant un certain niveau de caractère aléatoire au moins lorsque des séquences sont sélectionnées dans un batch.  Toutefois, les buckets doivent être très grands pour assurer une variabilité suffisamment importante au sein des batches. D'un autre côté, la fabrication de buckets trop grands augmentera le temps d'entrainement en raison de calculs non pertinents sur des zero-padding séquences. Le réglage correct de ces hyperparamètres est donc d'une importance fondamentale pour un entrainement rapide et robuste des modèles acoustiques.   
+   
+   
+   
+   
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**
   Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

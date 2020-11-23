@@ -121,7 +121,9 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
       ○ MSD sur la concaténation des 8 derniers états cachés</br>
    ● Entrainement</br>
       ○ Adoucir la cross-entropy catégorielle</br>
+      ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Smoothed-categorical-cross-entropy.png?raw=true)
       ○ [Taux d'apprentissage discriminatoire](https://arxiv.org/pdf/1801.06146.pdf)</br>
+      ![alt text](
       ○ **Sequence bucketing** pour accélérer l'entrainement : L'idée est d'effectuer une mise en bucket (bucketing) du corpus d'entraînement, où chaque bucket représente une plage de longueurs d'énonciation et chaque échantillon d'entraînement est attribué au bucket qui correspond à sa longueur.Ensuite, un batch est construit en tirant des séquences à partir d'un bucket choisi au hasard. Le concept de bucketing atténue d'une certaine manière le problème des zero-padding si des plages de longueur appropriées peuvent être définies, tout en permettant un certain niveau de caractère aléatoire au moins lorsque des séquences sont sélectionnées dans un batch.  Toutefois, les buckets doivent être très grands pour assurer une variabilité suffisamment importante au sein des batches. D'un autre côté, la fabrication de buckets trop grands augmentera le temps d'entrainement en raison de calculs non pertinents sur des zero-padding séquences. Le réglage correct de ces hyperparamètres est donc d'une importance fondamentale pour un entrainement rapide et robuste des modèles acoustiques.</br>
    
    

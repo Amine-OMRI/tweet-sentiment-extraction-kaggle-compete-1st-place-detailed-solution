@@ -112,17 +112,17 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2Fd746070e62bc05d74f7543785da6df70%2Fplot.jpg?generation=1592405194100691&alt=media)</br>
    
    **Les modèles de [Theo](https://www.kaggle.com/theoviel):**</br>
-   ● Transformateurs
-      ○ BERT-base-uncased (CV 0.710)
-      ○ BERT-large-uncased-wwm (CV 0.710)
-      ○ DistilBERT (CV 0.705)
-      ○ ALBERT-large-v2 (CV 0.711)
-   ● Architecture
-      ○ MSD sur la concaténation des 8 derniers états cachés
-   ● Entrainement
-      ○ Adoucir la cross-entropy catégorielle
-      ○ [Taux d'apprentissage discriminatoire](https://arxiv.org/pdf/1801.06146.pdf)
-      ○ **Sequence bucketing** pour accélérer l'entrainement : L'idée est d'effectuer une mise en bucket (bucketing) du corpus d'entraînement, où chaque bucket représente une plage de longueurs d'énonciation et chaque échantillon d'entraînement est attribué au bucket qui correspond à sa longueur.Ensuite, un batch est construit en tirant des séquences à partir d'un bucket choisi au hasard. Le concept de bucketing atténue d'une certaine manière le problème des zero-padding si des plages de longueur appropriées peuvent être définies, tout en permettant un certain niveau de caractère aléatoire au moins lorsque des séquences sont sélectionnées dans un batch.  Toutefois, les buckets doivent être très grands pour assurer une variabilité suffisamment importante au sein des batches. D'un autre côté, la fabrication de buckets trop grands augmentera le temps d'entrainement en raison de calculs non pertinents sur des zero-padding séquences. Le réglage correct de ces hyperparamètres est donc d'une importance fondamentale pour un entrainement rapide et robuste des modèles acoustiques.   
+   ● Transformateurs</br>
+      ○ BERT-base-uncased (CV 0.710)</br>
+      ○ BERT-large-uncased-wwm (CV 0.710)</br>
+      ○ DistilBERT (CV 0.705)</br>
+      ○ ALBERT-large-v2 (CV 0.711)</br>
+   ● Architecture</br>
+      ○ MSD sur la concaténation des 8 derniers états cachés</br>
+   ● Entrainement</br>
+      ○ Adoucir la cross-entropy catégorielle</br>
+      ○ [Taux d'apprentissage discriminatoire](https://arxiv.org/pdf/1801.06146.pdf)</br>
+      ○ **Sequence bucketing** pour accélérer l'entrainement : L'idée est d'effectuer une mise en bucket (bucketing) du corpus d'entraînement, où chaque bucket représente une plage de longueurs d'énonciation et chaque échantillon d'entraînement est attribué au bucket qui correspond à sa longueur.Ensuite, un batch est construit en tirant des séquences à partir d'un bucket choisi au hasard. Le concept de bucketing atténue d'une certaine manière le problème des zero-padding si des plages de longueur appropriées peuvent être définies, tout en permettant un certain niveau de caractère aléatoire au moins lorsque des séquences sont sélectionnées dans un batch.  Toutefois, les buckets doivent être très grands pour assurer une variabilité suffisamment importante au sein des batches. D'un autre côté, la fabrication de buckets trop grands augmentera le temps d'entrainement en raison de calculs non pertinents sur des zero-padding séquences. Le réglage correct de ces hyperparamètres est donc d'une importance fondamentale pour un entrainement rapide et robuste des modèles acoustiques.</br>
    
    
    

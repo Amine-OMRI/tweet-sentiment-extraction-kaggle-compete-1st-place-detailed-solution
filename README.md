@@ -90,7 +90,8 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Question: sentiment
    - Answer: texte sélectionné
     ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/model_architecture.png?raw=true)
-  ### Les modèles utilisés
+  ## Les modèles utilisés
+  ### 
    **Les modèles de [Heartkilla](https://www.kaggle.com/aruchomu):**</br>
    RoBERTa-base-squad2, RoBERTa-large-squad2,DistilRoBERTa-base, base XLNet
    - Il a fait un pré-entrainement sur SQuAD 2.0</br>
@@ -147,8 +148,17 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
       ○ Smoothed categorical cross-entropy</br>
       ○ Discriminative learning rate</br>
       ○ Fichier custom merges.txt pour RoBERTa</br>
-
+      
+===> Étant donné que les transformateurs sont à niveau token, ils ne peuvent pas capturer le bruit.</br>
+===> Solution : stacking</br>
+      ○ Convertir les probabilités des tokens des transformateurs au niveau des caractères en attribuant à chaque caractère la probabilité de son token</br>
+      ○ Alimenter les probabilités OOF (out of fold) au niveau des caractères en un NN au niveaux des caractères en utilisant le Staking</br>
    
+   **Le Stacking**: est un ensemble machine learning algorithm.  Il existe de nombreuses façons d'assembler des modèles, les modèles les plus connus étant Bagging ou le Boosting. Le Bagging permet de regrouper plusieurs modèles similaires avec une variance élevée et d'en faire la moyenne pour diminuer la variance. Le Boosting permet de construire plusieurs modèles incrémentiels pour diminuer le biais, tout en gardant une faible variance.</br>
+   Le Stacking (parfois appelé  Stacked Generalizatio) est un paradigme différent. Le but de l'empilement est d'explorer un espace de modèles différents pour le même problème. L'idée est que vous pouvez attaquer un problème d'apprentissage avec différents types de modèles qui sont capables d'apprendre une partie du problème, mais pas tout l'espace du problème. Ainsi, vous pouvez construire plusieurs apprenants différents et vous les utilisez pour construire une prédiction intermédiaire, une prédiction pour chaque modèle appris. Ensuite, vous ajoutez un nouveau modèle qui apprend à partir des prédictions intermédiaires  de la même target.</br>
+
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**
   Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

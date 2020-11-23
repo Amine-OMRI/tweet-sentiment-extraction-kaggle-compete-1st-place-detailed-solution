@@ -129,14 +129,25 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    **Les modèles de [Cl_ev (Anton)](https://www.kaggle.com/cl2ev1):**</br>
    ● Transformateurs</br>
       ○ RoBERTa-base (CV 0.715)</br> 
-      ○ BERTweet: Un modèle linguistique pré-entrainé sur des [Tweets  en anglais](https://arxiv.org/pdf/2005.10200.pdf)
-   ● Architecture</br>
-      ○ Pareil que ceux de Théo</br>
+      ○ BERTweet: Un modèle linguistique pré-entrainé sur des [Tweets  en anglais](https://arxiv.org/pdf/2005.10200.pdf)</br>
+   ● Architecture: Pareil que ceux de Théo</br>
    ● Entrainement</br>
       ○ Smoothed categorical cross-entropy</br>
       ○ Discriminative learning rate</br>
       ○ Fichier custom merges.txt pour RoBERTa</br>
    
+   **Les modèles de [Hikkiiii](https://www.kaggle.com/wochidadonggua):**</br>
+    ● Transformateurs</br>
+      ○ 5fold-roberta-base-squad2(0.712CV) </br> 
+      ○ 5fold-roberta-large-squad2(0.714CV) </br>
+   ● Architecture: 
+      ○ Ajoutez le sentiment à la fin du texte
+      ○ CNN + Couche linéaire sur la concaténation des derniers **3 hidden states**</br>
+   ● Entrainement</br>
+      ○ Smoothed categorical cross-entropy</br>
+      ○ Discriminative learning rate</br>
+      ○ Fichier custom merges.txt pour RoBERTa</br>
+
    
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**

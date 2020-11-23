@@ -156,25 +156,21 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    
    **Le Stacking**: est un ensemble machine learning algorithm.  Il existe de nombreuses façons d'assembler des modèles, les modèles les plus connus étant Bagging ou le Boosting. Le Bagging permet de regrouper plusieurs modèles similaires avec une variance élevée et d'en faire la moyenne pour diminuer la variance. Le Boosting permet de construire plusieurs modèles incrémentiels pour diminuer le biais, tout en gardant une faible variance.</br>
    Le Stacking (parfois appelé  Stacked Generalizatio) est un paradigme différent. Le but de l'empilement est d'explorer un espace de modèles différents pour le même problème. L'idée est que vous pouvez attaquer un problème d'apprentissage avec différents types de modèles qui sont capables d'apprendre une partie du problème, mais pas tout l'espace du problème. Ainsi, vous pouvez construire plusieurs apprenants différents et vous les utilisez pour construire une prédiction intermédiaire, une prédiction pour chaque modèle appris. Ensuite, vous ajoutez un nouveau modèle qui apprend à partir des prédictions intermédiaires  de la même target.</br>
-  ### Les modèles du deuxième niveau
-  **NN utilisant le Stacking**
-  ![alt text]()
-
-   ### Tkenisation 
-  **Qu'est-ce qu'un tokeniser ?**
-  Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].
-
- ![alt text](https://camo.githubusercontent.com/541a5e3521cf5b4c84c7ced36628841d8e66d58b7f2e51cded099a18c006d4e9/68747470733a2f2f68756767696e67666163652e636f2f6c616e64696e672f6173736574732f746f6b656e697a6572732f746f6b656e697a6572732d6c6f676f2e706e67)
-  Développé par huggingdace, propose une implémentation des tokenizers les plus utilisés aujourd'hui, en mettant l'accent sur les performances et la polyvalence
-
-  Extrêmement rapide (à la fois pour l'entraînement et la tokenisation), grâce à l'implémentation de Rust. Il faut moins de 20 secondes pour tokeniser un Go de     texte sur l'unité centrale d'un serveur.
-    - Facile à utiliser, mais aussi extrêmement polyvalent.
-    - Conçu pour la recherche et la production.
-    - La normalisation s'accompagne d'un suivi des alignements. Il est toujours possible d'obtenir la partie de la phrase originale qui correspond à un jeton donné.
-    - Effectue tout le prétraitement : Tronquer, Tamponner, ajouter les tokens spéciaux dont votre modèle a besoin.
+  **NN utilisant le Stacking**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Stacking.png?raw=true)</br>
   
-  
-  
+  ### Les modèles du deuxième niveau</br>
+  **Char-level NN:RNN**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Char-level-NN-RNN.png?raw=true)</br>
+  **Char-level NN:CNN**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Char-level-NN-CNN.png?raw=true)</br>
+  **Char-level NN:WaveNet**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Char-level-NN-WaveNet.png?raw=true)</br>
+   ### Soumissions (Submissions) </br>
+  **Premières soumissions**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/1st-submission.png?raw=true)</br>
+  **Deuxièmes soumissions**</br>
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/2nd-submission.png?raw=true)</br>
   
   
   ## Pour plus de détails sur leur solution

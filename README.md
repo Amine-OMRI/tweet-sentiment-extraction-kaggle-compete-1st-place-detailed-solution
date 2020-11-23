@@ -102,14 +102,13 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Le meilleur modèle unique : RoBERTa-base-squad2, 5 fold CV stratified : 0,715</br>   
    **Multi Sample Dropout (MSD):** C'est l'une des techniques qu'ils ont utilisées et que je trouve si intéressante. En fait, il applique un dropout plusieurs fois avec différents masques et ensuite il calcule la moyenne des résultats</br>
   Le dropout initial crée un sous-ensemble choisi au hasard (appelé dropout sample) à partir des données d'entrée de chaque itération d'entrainement, tandis que le MSD crée plusieurs échantillon de dropout. La loss est calculée pour chaque échantillon, puis la moyenne des losses des échantillons est calculée pour obtenir la Loss finale [(plus de détails ici)](https://arxiv.org/pdf/1905.09788.pdf).</br>
-  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Multi-Sample-Dropout.png?raw=true)
+  ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Multi-Sample-Dropout.png?raw=true)</br>
    **Custom loss Jaccard-based Soft Labels:** Étant donné que la Cross Entropy n'optimise pas directement l'indice de Jaccard, Heartkilla a essayé différentes fonctions de Loss pour pénaliser davantage les prédictions lointaines que les prédictions proches. SoftIOU utilisé dans la segmentation n'a pas aidé, il a donc trouvé une Loss personnalisée en calculant l'indice de Jaccard au niveau du token. Il a ensuite utilisé ces nouveaux labels cibles et a optimisé la divergence. Alpha c'est un paramètre permettant d'équilibrer l'étiquetage habituel basé sur la Cross Entropy et l'indice de Jaccard.
-![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2F9341bede28263bcf0e9bb259ac790338%2FScreen%20Shot%202020-05-30%20at%2017.31.22.png?generation=1592405028556842&alt=media)
+![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2F9341bede28263bcf0e9bb259ac790338%2FScreen%20Shot%202020-05-30%20at%2017.31.22.png?generation=1592405028556842&alt=media)</br>
+  Il a également remarqué que les probabilités dans ce cas changent assez rapidement, alors il décidé de corriger un peu le résultat en ajoutant un carré.
+  ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2F4d1975e293c33c077fd45e6b81d1aa63%2FScreen%20Shot%202020-05-30%20at%2017.29.17.png?generation=1592405079812280&alt=media)</br>
 
 
-
-
-Traduit avec www.DeepL.com/Translator (version gratuite)
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**
   Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

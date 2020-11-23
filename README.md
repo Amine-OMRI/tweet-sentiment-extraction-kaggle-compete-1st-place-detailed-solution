@@ -121,12 +121,21 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
       ○ MSD sur la concaténation des 8 derniers états cachés</br>
    ● Entrainement</br>
       ○ Adoucir la cross-entropy catégorielle</br>
-      ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Smoothed-categorical-cross-entropy.png?raw=true)
+      ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Smoothed-categorical-cross-entropy.png?raw=true)</br>
       ○ [Taux d'apprentissage discriminatoire](https://arxiv.org/pdf/1801.06146.pdf)</br>
-      ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Discriminative-learning-rate.png?raw=true)
+      ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Discriminative-learning-rate.png?raw=true)</br>
       ○ **Sequence bucketing** pour accélérer l'entrainement : L'idée est d'effectuer une mise en bucket (bucketing) du corpus d'entraînement, où chaque bucket représente une plage de longueurs d'énonciation et chaque échantillon d'entraînement est attribué au bucket qui correspond à sa longueur.Ensuite, un batch est construit en tirant des séquences à partir d'un bucket choisi au hasard. Le concept de bucketing atténue d'une certaine manière le problème des zero-padding si des plages de longueur appropriées peuvent être définies, tout en permettant un certain niveau de caractère aléatoire au moins lorsque des séquences sont sélectionnées dans un batch.  Toutefois, les buckets doivent être très grands pour assurer une variabilité suffisamment importante au sein des batches. D'un autre côté, la fabrication de buckets trop grands augmentera le temps d'entrainement en raison de calculs non pertinents sur des zero-padding séquences. Le réglage correct de ces hyperparamètres est donc d'une importance fondamentale pour un entrainement rapide et robuste des modèles acoustiques.</br>
    
-   
+   **Les modèles de [Cl_ev (Anton)](https://www.kaggle.com/cl2ev1):**</br>
+   ● Transformateurs</br>
+      ○ RoBERTa-base (CV 0.715)</br> 
+      ○ BERTweet: Un modèle linguistique pré-entrainé sur des [Tweets  en anglais](https://arxiv.org/pdf/2005.10200.pdf)
+   ● Architecture</br>
+      ○ Pareil que ceux de Théo</br>
+   ● Entrainement</br>
+      ○ Smoothed categorical cross-entropy</br>
+      ○ Discriminative learning rate</br>
+      ○ Fichier custom merges.txt pour RoBERTa</br>
    
    
    ### Tkenisation 

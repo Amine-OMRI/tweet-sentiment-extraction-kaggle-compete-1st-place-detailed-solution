@@ -89,7 +89,7 @@ le premier ensemble contient les probabilités pour chaque token, que le token s
 le deuxième ensemble contient les probabilités pour chaque token, que le token soit la **Fin** du texte sélectionné</br>
    - Question: sentiment
    - Answer: texte sélectionné
-    ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Question%20answering%20setup.png?raw=true)
+    ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/model_architecture.png?raw=true)
   ### Les modèles utilisés
    **Les modèles de [Heartkilla](https://www.kaggle.com/aruchomu):**</br>
    RoBERTa-base-squad2, RoBERTa-large-squad2,DistilRoBERTa-base, base XLNet

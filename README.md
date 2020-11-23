@@ -96,12 +96,16 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    - Il a fait un pré-entrainement sur SQuAD 2.0</br>
    - Certains d'entre eux sont déjà pré-entrainés sur SQuAD 2.0, ce qui fait que non seulement le pré-entrainement initial fonctionne, mais aussi la tâche de pré-      entrainement fonctionnais bien.</br>
    - Il a modifié l'architecture (Fine tuning) en effectuant une moyenne et un maxpooling (Avg / Max ) de toutes les couches sans embeddings.</br>
-   - Il a également effectué un Multi Sample Dropout : cette technique accélère l'entrainement et permet une meilleure généralisation pour les réseaux de neurones.
-   - AdamW avec plan de démarrage linéaire.</br>
+   - Il a également effectué un Multi Sample Dropout (MSD): cette technique accélère l'entrainement et permet une meilleure généralisation pour les réseaux de neurones.
+   - AdamW: un optimiseur adaptatif avec utilisation d'une échelle de taux d'apprentissage pour moduler l'évolution du taux d'apprentissage de l'optimiseur en fonction du temps.</br>
    - Une loss personnalisée : Jaccard-based Soft Labels.</br>
    - Le meilleur modèle unique : RoBERTa-base-squad2, 5 fold CV stratified : 0,715</br>   
+   **Multi Sample Dropout (MSD):** C'est l'une des techniques qu'ils ont utilisées et que je trouve si intéressante 
+   C'est l'une des techniques qu'ils ont utilisées et que je trouve si intéressante. En fait, il applique un dropout plusieurs fois avec différents masques et ensuite il calcule la moyenne des résultats</br>
+  Le dropout initial crée un sous-ensemble choisi au hasard (appelé dropout sample) à partir des données d'entrée de chaque itération d'entrainement, tandis que le MSD crée plusieurs échantillon de dropout. La loss est calculée pour chaque échantillon, puis la moyenne des losses des échantillons est calculée pour obtenir la Loss finale.</br>
+  [alt text](----------------)
 
-  
+Traduit avec www.DeepL.com/Translator (version gratuite)
    ### Tkenisation 
   **Qu'est-ce qu'un tokeniser ?**
   Un tokenizer reçoit un flux de caractères, le décompose en tokens individuels (généralement des mots individuels) et produit un flux de tokens. Par exemple, un   tokenizer d'espacement décompose le texte en tokens chaque fois qu'il voit un espacement. Il convertit le texte "Quick brown fox !" en termes ["Quick",  "brown", " fox !"].

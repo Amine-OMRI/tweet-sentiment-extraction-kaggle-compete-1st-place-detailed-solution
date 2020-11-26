@@ -95,6 +95,11 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    **Les modèles de [Heartkilla](https://www.kaggle.com/aruchomu):**</br>
    RoBERTa-base-squad2, RoBERTa-large-squad2,DistilRoBERTa-base, base XLNet
    - Il a fait un pré-entrainement sur SQuAD 2.0</br>
+
+      1) Il a utilisé le GPU Colab Pro pour RoBERTa-large et il a fallu environ 6h pour l'entraîner avec 5 folds et 4 époques sans optimisation particulière. 
+         [Hikkiiii](https://www.kaggle.com/wochidadonggua)a également entraîner RoBERTa-large, 2V100, APEX(O1), il a fallu environ 220s par époque 
+      2) RoBERTa-base-squad2 est disponible pré-entrainé par [HuggingFace](https://huggingface.co/deepset/roberta-base-squad2).
+
    - Certains d'entre eux sont déjà pré-entrainés sur SQuAD 2.0, ce qui fait que non seulement le pré-entrainement initial fonctionne, mais aussi la tâche de pré-      entrainement fonctionnais bien.</br>
    - Il a modifié l'architecture (Fine tuning) en effectuant une moyenne et un maxpooling (Avg / Max ) de toutes les couches sans embeddings.</br>
    - Il a également effectué un Multi Sample Dropout (MSD): cette technique accélère l'entrainement et permet une meilleure généralisation pour les réseaux de neurones.

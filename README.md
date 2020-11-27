@@ -109,6 +109,11 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
    **Multi Sample Dropout (MSD):** C'est l'une des techniques qu'ils ont utilisées et que je trouve si intéressante. En fait, il applique un dropout plusieurs fois avec différents masques et ensuite il calcule la moyenne des résultats</br>
   Le dropout initial crée un sous-ensemble choisi au hasard (appelé dropout sample) à partir des données d'entrée de chaque itération d'entrainement, tandis que le MSD crée plusieurs échantillon de dropout. La loss est calculée pour chaque échantillon, puis la moyenne des losses des échantillons est calculée pour obtenir la Loss finale [(plus de détails ici)](https://arxiv.org/pdf/1905.09788.pdf).</br>
   ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/Multi-Sample-Dropout.png?raw=true)</br>
+    Une autre technique qui a été utilisée comme Optimiser c'est :</br>
+  **SWA :** la technique SWA (Stochastic Weight Averaging) récemment proposée, et sa nouvelle implémentation dans torchcontrib. La SWA est une procédure simple qui améliore la généralisation du deep learning sur la Descente de Gradient Stochastique (SGD) sans coût supplémentaire, et peut être utilisée en remplacement de tout autre optimiseur dans PyTorch. Le SWA a une large gamme d'applications et de fonctionnalités.</br>
+  Il a été démontré que SWA améliore considérablement la généralisation des tâches de vision par ordinateur, y compris les VGG, les ResNets, les Wide ResNets et les DenseNets sur ImageNet et les CIFAR benchmarks.</br>
+  En bref, le SWA effectue une moyenne égale des poids traversés par le SGD avec un programme d'apprentissage modifié.</br>
+
    **Custom loss Jaccard-based Soft Labels:** Étant donné que la Cross Entropy n'optimise pas directement l'indice de Jaccard, Heartkilla a essayé différentes fonctions de Loss pour pénaliser davantage les prédictions lointaines que les prédictions proches. SoftIOU utilisé dans la segmentation n'a pas aidé, il a donc trouvé une Loss personnalisée en calculant l'indice de Jaccard au niveau du token. Il a ensuite utilisé ces nouveaux labels cibles et a optimisé la divergence. Alpha c'est un paramètre permettant d'équilibrer l'étiquetage habituel basé sur la Cross Entropy et l'indice de Jaccard.
 ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2F9341bede28263bcf0e9bb259ac790338%2FScreen%20Shot%202020-05-30%20at%2017.31.22.png?generation=1592405028556842&alt=media)</br>
   Il a également remarqué que les probabilités dans ce cas changent assez rapidement, alors il décidé de corriger un peu le résultat en ajoutant un carré.
@@ -116,11 +121,6 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
   Cela a parfaitement fonctionné pour trois de ses modèles, à l'exception du DistilRoBERTa qui utilisait la précédente version sans le carré. Finalement, cette Loss a augmenté tous les modèles d'environ 0,003.
   Voici un graphique des probabilités target pour une phrase de 30 tokens avec start_idx=5 et end_idx=25, alpha=0,3.</br>
    ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2Fd746070e62bc05d74f7543785da6df70%2Fplot.jpg?generation=1592405194100691&alt=media)</br>
-   Une autre technique qui a été utilisée comme Optimiser l'est :
-
-  **SWA :** la technique SWA (Stochastic Weight Averaging) récemment proposée, et sa nouvelle implémentation dans torchcontrib. La SWA est une procédure simple qui améliore la généralisation du deep learning sur la Descente de Gradient Stochastique (SGD) sans coût supplémentaire, et peut être utilisée en remplacement de tout autre optimiseur dans PyTorch. Le SWA a une large gamme d'applications et de fonctionnalités.</br>
-  Il a été démontré que SWA améliore considérablement la généralisation des tâches de vision par ordinateur, y compris les VGG, les ResNets, les Wide ResNets et les DenseNets sur ImageNet et les CIFAR benchmarks.</br>
-  En bref, le SWA effectue une moyenne égale des poids traversés par le SGD avec un programme d'apprentissage modifié.</br>
    
    **Les modèles de [Theo](https://www.kaggle.com/theoviel):**</br>
    ● Transformateurs</br>

@@ -116,6 +116,11 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
   Cela a parfaitement fonctionné pour trois de ses modèles, à l'exception du DistilRoBERTa qui utilisait la précédente version sans le carré. Finalement, cette Loss a augmenté tous les modèles d'environ 0,003.
   Voici un graphique des probabilités target pour une phrase de 30 tokens avec start_idx=5 et end_idx=25, alpha=0,3.</br>
    ![alt text](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2000545%2Fd746070e62bc05d74f7543785da6df70%2Fplot.jpg?generation=1592405194100691&alt=media)</br>
+   Une autre technique qui a été utilisée comme Optimiser l'est :
+
+  **SWA :** la technique SWA (Stochastic Weight Averaging) récemment proposée, et sa nouvelle implémentation dans torchcontrib. La SWA est une procédure simple qui améliore la généralisation du deep learning sur la Descente de Gradient Stochastique (SGD) sans coût supplémentaire, et peut être utilisée en remplacement de tout autre optimiseur dans PyTorch. Le SWA a une large gamme d'applications et de fonctionnalités.</br>
+  Il a été démontré que SWA améliore considérablement la généralisation des tâches de vision par ordinateur, y compris les VGG, les ResNets, les Wide ResNets et les DenseNets sur ImageNet et les CIFAR benchmarks.</br>
+  En bref, le SWA effectue une moyenne égale des poids traversés par le SGD avec un programme d'apprentissage modifié.</br>
    
    **Les modèles de [Theo](https://www.kaggle.com/theoviel):**</br>
    ● Transformateurs</br>

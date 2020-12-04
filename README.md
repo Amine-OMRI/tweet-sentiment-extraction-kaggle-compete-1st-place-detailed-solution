@@ -6,7 +6,7 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
    [Hikkiiii](https://www.kaggle.com/wochidadonggua): Hikkiiii NLP Data scientist Beijing, Beijing, China</br>
    [Theo](https://www.kaggle.com/theoviel): Théo Vie Chercheur scientifique à Paris, Île-de-France, Franc</br>
    [Cl_ev](https://www.kaggle.com/cl2ev1): Anton travaille dans l'IT London, England, United Kingdom</br>
- ### Le notebook "roberta_base.ipynb" représente l'un des modèles de premier niveau réalisé par [Heartkilla](https://www.kaggle.com/aruchomu) : Artsem Zhyvalkouski le code source est sous `src/1st_level/roberta_base/` sur le [repo git](https://github.com/heartkilla/kaggle_tweet/tree/master/src/1st_level/roberta_base) où ils ont mis le code de leur solution</br>
+ ### Le notebook ["roberta_base.ipynb"](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/roberta_base.ipynb) représente l'un des modèles de premier niveau réalisé par [Heartkilla](https://www.kaggle.com/aruchomu) : Artsem Zhyvalkouski le code source est sous `src/1st_level/roberta_base/` sur le [repo git](https://github.com/heartkilla/kaggle_tweet/tree/master/src/1st_level/roberta_base) où ils ont mis le code de leur solution</br>
  
  ## Présentation de la compétition 
    La compétition portait sur l'extraction de sentiments, ci-dessous un résumé sur le sujet :

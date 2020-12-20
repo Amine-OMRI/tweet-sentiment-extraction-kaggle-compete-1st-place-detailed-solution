@@ -31,7 +31,8 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
   - train.csv - Le jeux de données d'entrainement
   - test.csv - Le jeux de données de test 
   - sample_submission.csv - un exemple de fichier de soumission dans le format correct</br>
-  Colonnes</br>
+  
+  Colonnes
   - textID - un identifiant unique pour chaque fragment de texte</br>
   - text - Le texte du tweet</br>
   - sentiment - le sentiment général du tweet</br>

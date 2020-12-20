@@ -195,6 +195,8 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
   **Deuxièmes soumissions**</br>
   ![alt text](https://github.com/Amine-OMRI/tweet-sentiment-extraction-kaggle-compete-1st-place-detailed-solution/blob/main/2nd-submission.png?raw=true)</br>
   
+  ### Pseudo-labeling (étiquetage)
+  Ils ont utilisé un de leurs échantillons de CV 0.7354 pour pseudo-étiqueter les données de test publiques. Ils ont suivi la même [approche](https://www.kaggle.com/c/google-quest-challenge/discussion/129840)et ont créé des   pseudo-étiquettes “leakless”. Ils ont ensuite utilisé un seuil de 0,35 pour couper les échantillons de faible confiance. Le score de confiance a été déterminé comme suit : (start_probas.max() + end_probas.max()) / 2. Ils ne sont pas sûrs que cela aide vraiment à améliorer le score final dans son ensemble, car ils n'ont fait que 9 soumissions avec l'inférence complète.</br>
   
   ## Pour plus de détails sur leur solution
 Ils ont fait un discours sur leur solution lors du meetup ODS Paris: [YouTube link](https://www.youtube.com/watch?v=S7soN-y5WMg)<br />

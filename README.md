@@ -164,7 +164,7 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
       ○ 5fold-roberta-base-squad2(0.712CV) </br> 
       ○ 5fold-roberta-large-squad2(0.714CV) </br>
    ● Architecture: 
-      ○ Ajoutez le sentiment à la fin du texte
+      ○ Ajoutez le sentiment à la fin du texte</br>
       ○ CNN + Couche linéaire sur la concaténation des derniers **3 hidden states**</br>
    ● Entrainement</br>
       ○ Smoothed categorical cross-entropy</br>
@@ -198,4 +198,4 @@ le deuxième ensemble contient les probabilités pour chaque token, que le token
   
   ## Pour plus de détails sur leur solution
 Ils ont fait un discours sur leur solution lors du meetup ODS Paris: [YouTube link](https://www.youtube.com/watch?v=S7soN-y5WMg)<br />
-La présentation de leur solution : [SlideShare link](https://www.slideshare.net/ArtsemZhyvalkouski/kaggle-tweet-sentiment-extraction-1st-place-solution)
+Leur repo sur github : [SlideShare link](https://github.com/heartkilla/kaggle_tweet)

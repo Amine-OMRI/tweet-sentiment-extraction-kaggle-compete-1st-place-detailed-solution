@@ -26,15 +26,15 @@ Ce repository contient la solution détaillée qui ont remporté la première pl
   | J'aime beaucoup la chanson Love Story de Taylor Swift | positive | j'aime |
   | je dois récupérer mon ordinateur réparé | neutre | je dois récupérer mon ordinateur réparé |
   | trop triste, tu vas me manquer ici à San Diego ! ! | négatif | trop triste |
-  Fichiers
+  </br>Fichiers
   - train.csv - Le jeux de données d'entrainement
   - test.csv - Le jeux de données de test 
-  - sample_submission.csv - un exemple de fichier de soumission dans le format correct
-  Colonnes
-  textID - un identifiant unique pour chaque fragment de texte
-  text - Le texte du tweet
-  sentiment - le sentiment général du tweet
-  selected_text - [Que pour les données d'entrainement] le texte qui reflète le sentiment du tweet
+  - sample_submission.csv - un exemple de fichier de soumission dans le format correct</br>
+  Colonnes</br>
+  textID - un identifiant unique pour chaque fragment de texte</br>
+  text - Le texte du tweet</br>
+  sentiment - le sentiment général du tweet</br>
+  selected_text - (Que pour les données d'entrainement) le texte qui reflète le sentiment du tweet</br>
   
    ### Evaluation
   La métrique utilisée dans cette compétition est le [score Jaccard](https://en.wikipedia.org/wiki/Jaccard_index) au niveau des mots. Vous trouverez [ici](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50) une bonne description de la similarité de Jaccard pour les chaînes de caractères.</br>
